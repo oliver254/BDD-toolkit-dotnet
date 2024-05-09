@@ -111,7 +111,7 @@ namespace ITLIBRIUM.BddToolkit.Execution
             action.Should().ThrowExactly<ExceptionChecksFailed>()
                 .And.ExceptionFromWhenAction.Should().BeSameAs(exception1);
             action.Should().ThrowExactly<ExceptionChecksFailed>()
-                .And.FailedExceptionChecks.Should().BeEquivalentTo(exception2);
+                .And.FailedExceptionChecks.Should().BeEquivalentTo(new[] { exception2 });
         }
         
         [Fact]
@@ -124,7 +124,7 @@ namespace ITLIBRIUM.BddToolkit.Execution
             Action action = () => testedScenario.ThrowOnErrors();
 
             action.Should().ThrowExactly<AssertsFailed>()
-                .And.FailedAssertions.Should().BeEquivalentTo(exception1);
+                .And.FailedAssertions.Should().BeEquivalentTo(new[] { exception1 });
         }
 
         [Fact]
@@ -139,7 +139,7 @@ namespace ITLIBRIUM.BddToolkit.Execution
             Action action = () => testedScenario.ThrowOnErrors();
 
             action.Should().ThrowExactly<AssertsFailed>()
-                .And.FailedAssertions.Should().BeEquivalentTo(exception1, exception2);
+                .And.FailedAssertions.Should().BeEquivalentTo(new[] { exception1, exception2 });
         }
 
         private void Publish(TestedScenario testedScenario) =>

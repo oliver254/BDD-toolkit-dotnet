@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
+        <TargetFramework>netstandard2.1</TargetFramework>
         <AssemblyName>ITLIBRIUM.BddToolkit.xUnit</AssemblyName>
         <RootNamespace>ITLIBRIUM.BddToolkit.xUnit</RootNamespace>        
         <LangVersion>default</LangVersion>
@@ -26,7 +26,7 @@
     </PropertyGroup>
 
     <ItemGroup>        
-      <PackageReference Include="xunit" Version="2.4.1" />
+      <PackageReference Include="xunit" Version="2.8.0" />
     </ItemGroup>
 
     <ItemGroup>
